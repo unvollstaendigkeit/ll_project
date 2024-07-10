@@ -1,8 +1,31 @@
-<h1>Articles</h1>
+<div class="container">
+  <div class="main-content">
+    <div class="logo">
+      <%= image_tag("logo.png", alt: "Your Logo") %>
+    </div>
 
-<% @articles.each do |article| %>
-  <div>
-    <h2><%= link_to article.title, article_path(article) %></h2>
-    <p><%= article.body.truncate(100) %></p>
+    <div class="center-content">
+      <% if @articles.any? %>
+        <% @articles.first(1).each do |article| %>
+          <h2><%= article.title %></h2>
+          <p><%= article.body %></p>
+        <% end %>
+      <% else %>
+        <p>No articles found</p>
+      <% end %>
+    </div>
   </div>
-<% end %>
+
+  <aside class="sidebar">
+  <h2>Latest Articles</h2>
+  <ul>
+    <% @recent_articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article) %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+
+
+

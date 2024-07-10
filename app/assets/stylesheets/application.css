@@ -1,15 +1,135 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of flex items */
+    justify-content: flex-start;
+    margin: 20px;
+  }
+  
+  .main-content {
+    flex: 3;
+    padding: 20px;
+    margin-right: 20px; /* Adjust this margin if needed */
+  }
+  
+  .sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-left: 1px solid #ccc;
+    max-width: 200px; /* Adjust as needed */
+  }
+  
+  .sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: rgb(53, 35, 144); /* Changed the color to grey */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    color: black !important; /* Set the color to black */
+        font-size: 0.9em; /* Adjust the font size as needed */
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  .center-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+    color: grey; /* Changed the color to grey */
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .center-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: grey; /* Changed the color to grey */
+  }
+  
+  .center-content p {
+    width: 60%; /* Adjust as needed for your layout */
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  
+  .menu-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .menu-bar li {
+    float: left;
+  }
+  
+  .menu-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .menu-bar li a:hover {
+    background-color: #111;
+  }
+  
+  .logo {
+    text-align: center; /* Center the logo horizontally */
+    margin-bottom: 20px; /* Add some space below the logo */
+  }
+  
+  .logo img {
+    max-width: 500px; /* Adjust the maximum width of the logo as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  /* Add media queries for responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center;
+    }
+    
+    .main-content {
+      margin-right: 0; /* Remove margin on smaller screens */
+      margin-bottom: 20px; /* Add margin below the main content */
+    }
+    
+    .sidebar {
+      max-width: 100%; /* Full width for the sidebar */
+      border-left: none; /* Remove left border on smaller screens */
+      border-top: 1px solid #ccc; /* Add top border instead */
+    }
+
+    .sidebar h2 {
+        font-size: 0.8em; /* Adjust the font size as needed */
+        color: black; /* Set the color to black */
+      }
+      
+  }
+  
